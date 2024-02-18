@@ -1,16 +1,293 @@
-@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+  --green-fill: rgba(9, 121, 96, 1);
+  --dark-blue-fill: rgba(2, 0, 36, 1);
+}
 
 * {
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: 'Muli', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: var(--green-fill);
+}
+
+.content {
+  padding: 0 10%;
+  background-color: var(--green-fill);
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 100px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  background-color: rgba(2, 0, 36, 0.15);
+}
+
+.logo {
+  font-size: 32px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+nav a {
+  position: relative;
+  font-size: 18px;
+  color: var(--dark-blue-fill);
+  font-weight: 600;
+  text-decoration: none;
+  margin-left: 40px;
+}
+
+nav a:hover {
+  color: #fff;
+  transition: ease-in-out 0.2s;
+}
+
+nav a::before {
+  position: absolute;
+  content: '';
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #fff;
+}
+
+nav a:hover::before {
+  width: 100%;
+  transition: ease-in-out 0.2s;
+}
+
+section#home {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: 350px;
+  padding: 100px;
+  padding-left: 140px;
+}
+
+section {
+  height: 800px;
+}
+
+article {
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+article h2 {
+  margin-bottom: 0;
+  font-size: 2rem;
+  color: var(--dark-blue-fill);
+}
+
+article h4 {
+  margin: 0px 10px;
+}
+
+.text-box {
+  height: fit-content;
+  background-color: rgba(2, 0, 36, 0.15);
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.dot {
+  color: #fff;
+  font-size: 4rem;
+  margin-left: 5px;
+}
+
+aside {
+  height: 400px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  overflow: hidden; /* Prevent scrollbars */
-  margin: 0;
+}
+
+footer {
+  height: 100px;
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+}
+
+#home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: first baseline;
+  margin-top: 100px;
+}
+
+#home h1 {
+  font-size: 3.5rem;
+  color: var(--dark-blue-fill);
+  margin-bottom: 20px;
+}
+
+#home h5 {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  margin-bottom: -55px;
+}
+
+#home h2 {
+  font-size: 1.8rem;
+  color: var(--dark-blue-fill);
+  margin-top: -30px;
+}
+
+#home h4 {
+  font-size: 1rem;
+  margin-top: -20px;
+}
+
+a img {
+  height: 100px;
+  margin-bottom: -50px;
+}
+
+aside img {
+  height: 24rem;
+  border-radius: 5px;
+  box-shadow: var(--dark-blue-fill) 0px 0px 10px;
+}
+
+main ul {
+  margin-top: -10px;
+  margin-left: -50px;
+  display: inline-flex;
+  flex-wrap: column;
+}
+
+main li {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  background-color: rgba(2, 0, 36, 0.1);
+}
+
+main li img {
+  height: 20px;
+  padding-right: 5px;
+  filter: grayscale(30%);
+}
+
+section#works ul {
+  display: flex;
+  flex-wrap: column;
+  justify-content: center;
+  align-items: center;
+}
+
+section#works li {
+  text-decoration: none;
+  list-style-type: none;
+  text-align: center;
+  margin: 0 20px;
+}
+
+section#works li img {
+  height: 10rem;
+  border-radius: 5px;
+  box-shadow: var(--dark-blue-fill) 0px 0px 7px;
+}
+
+section#works h2 {
+  margin-top: 50px;
+  text-align: center;
+  font-size: 2rem;
+  color: var(--dark-blue-fill);
+}
+
+section#works ul.art img {
+  height: 15rem;
+}
+
+section#works ul.art li {
+  margin: 0 40px;
+}
+
+button {
+  border: none;
+  background-color: var(--dark-blue-fill);
+  color: white;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: ease-in-out 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+section#home aside img {
+  border: none;
+  box-shadow: none;
+  position: absolute;
+  right: -5rem;
+  top: 0rem;
+}
+
+@media (min-width: 768px) {
+  main {
+    display: flex;
+  }
+  aside {
+    flex: 1 1 30%;
+  }
+  article {
+    flex: 1 1 70%;
+  }
+}
+
+@media (max-width: 768px) {
+  section#home aside img {
+    display: none;
+  }
+
+  #home h1 {
+    font-size: 2rem;
+  }
+
+  #home h5 {
+    margin-bottom: -40px;
+  }
+
+  section#home {
+    padding: 0px 10px 0 20px;
+    margin-top: 80px;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .hide {
+    display: none;
+  }
 }
